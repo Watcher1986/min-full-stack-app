@@ -1,0 +1,1 @@
+# min-full-stack-app
