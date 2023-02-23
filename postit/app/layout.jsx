@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "./auth/Nav";
 
 import QueryWrapper from "./auth/QueryWrapper";
+import RequireAuth from "./components/RequireAuth";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -11,7 +12,7 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       {/*
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
       >
         <QueryWrapper>
           <Nav />
-          {children}
+          <RequireAuth>{children}</RequireAuth>
         </QueryWrapper>
       </body>
     </html>
