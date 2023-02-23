@@ -20,7 +20,6 @@ export default function Home() {
 
   if (error) return error;
   if (isLoading) return "Loading...";
-  console.log(data);
 
   return (
     <main>
