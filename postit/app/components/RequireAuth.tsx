@@ -1,6 +1,13 @@
+"use client";
+import { ReactNode } from "react";
+
 import getSessionData from "../hooks/getSessionStatus";
 
-export default async function RequireAuth({ children }) {
+interface Props {
+  children?: ReactNode;
+}
+
+export default async function RequireAuth({ children }: Props) {
   const session = await getSessionData();
 
   return !session?.user ? (
