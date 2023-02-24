@@ -2,7 +2,6 @@
 import { ReactNode } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 
 import CreatePost from "./components/AddPost";
 import Post from "./components/Post";
@@ -14,9 +13,7 @@ const allPosts = async () => {
   return response.data;
 };
 
-type Page = ReactNode | Promise<ReactNode> | Error;
-
-export default function Home(): Page {
+export default function Home(): ReactNode | Promise<ReactNode> {
   const { data, error, isLoading } = useQuery<PostType[], Error>({
     queryFn: allPosts,
     queryKey: ["posts"],
