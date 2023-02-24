@@ -35,6 +35,7 @@ export default async function handler(
 
     try {
       const result = await prisma.post.create({
+        // @ts-ignore
         data: {
           title,
           userId: prismaUser?.id,

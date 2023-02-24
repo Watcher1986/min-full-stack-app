@@ -25,6 +25,7 @@ export default async function handler(
         return res.status(403).json({ message: "Content cannot be empty" });
       }
       const result = await prisma.comment.create({
+        // @ts-ignore
         data: {
           message,
           userId: prismaUser?.id,
