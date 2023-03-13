@@ -32,7 +32,7 @@
     "app/layout.jsx",
     "app/layout.jsx",
     "prisma/client.js",
-    "prisma/client.ts"
+    "app/components/RequireAuth.tsx"
   ],
   "exclude": ["node_modules"]
 }

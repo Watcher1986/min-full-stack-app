@@ -27,8 +27,6 @@ export default function PostDetail(url: URL) {
 
   if (isLoading) return <p>Loading...</p>;
 
-  console.log("DATA => ", data);
-
   return (
     data && (
       <div>

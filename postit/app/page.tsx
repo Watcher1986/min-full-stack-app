@@ -1,4 +1,5 @@
 "use client";
+import { ReactNode } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
@@ -12,15 +13,15 @@ const allPosts = async () => {
   return response.data;
 };
 
-export default function Home() {
-  const { data, error, isLoading } = useQuery<PostType[]>({
+export default function Home(): ReactNode | Promise<ReactNode> {
+  const { data, error, isLoading } = useQuery<PostType[], Error>({
     queryFn: allPosts,
     queryKey: ["posts"],
   });
 
-  if (error) return error;
+  if (error) return <h1>error</h1>;
+
   if (isLoading) return "Loading...";
-  console.log(data);
 
   return (
     <main>
